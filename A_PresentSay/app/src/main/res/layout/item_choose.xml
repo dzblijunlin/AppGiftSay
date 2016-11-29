@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackGround">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_fifteen"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/choose_head_iv"
+            android:layout_width="@dimen/margin_fourty"
+            android:layout_height="@dimen/margin_fourty"
+             />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_three"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/choose_nickname_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsize_thirteen"
+                android:textColor="@color/colorChooseNick"
+                android:layout_marginLeft="@dimen/margin_five"/>
+
+            <TextView
+                android:id="@+id/choose_introduce_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorChooseIntrod"
+                android:textSize="@dimen/textsize_eleven"
+                android:layout_marginLeft="@dimen/margin_five"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    .<ImageView
+        android:id="@+id/choose_photo_iv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_oneeightzero"
+        android:layout_marginLeft="@dimen/margin_fifty"
+        android:layout_marginRight="@dimen/margin_fifty"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:id="@+id/choose_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_fifty"
+        android:textColor="@color/colorChooseTitle"
+        android:textSize="@dimen/textsize_twenty"/>
+
+    <TextView
+        android:id="@+id/choose_introduction_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_fifty"
+        android:layout_marginRight="@dimen/margin_fifty"
+        android:textSize="@dimen/textview_thirteen"
+        android:textColor="@color/colorChooseIntrod"
+        android:lines="2"
+        android:ellipsize="end"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorPinkBackGround"
+        android:layout_marginLeft="@dimen/home_margin_fiften"
+        android:layout_marginRight="@dimen/home_margin_fiften"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/home_margin_fiften">
+
+        <TextView
+            android:id="@+id/choose_lm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/column"
+            android:textColor="@color/colorColumn"
+            android:textSize="@dimen/textsize_eleven" />
+
+        <TextView
+            android:id="@+id/choose_small_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textsize_eleven"
+            android:textColor="@color/colorChooseTitle"
+            android:layout_marginLeft="@dimen/margin_five"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            >
+
+
+            <TextView
+                android:id="@+id/choose_num_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsize_eleven"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"/>
+            <ImageView
+                android:id="@+id/choose_heart_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/icon_post_favourite_gray"
+                android:layout_toLeftOf="@id/choose_num_tv"
+                android:layout_marginRight="@dimen/margin_five"/>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

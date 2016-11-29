@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.naruto.a_presentsay.fragment.CategoryFragment"
+    android:background="#FFF">
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.design.widget.TabLayout
+        android:id="@+id/cat_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMaxWidth="80dp"
+        >
+
+    </android.support.design.widget.TabLayout>
+
+
+    <TextView
+        android:id="@+id/cat_tv"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/shape_seek"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="搜索单品、攻略"
+        android:drawableLeft="@mipmap/nav_bar_icon_search_dark"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textColor="#968484"
+        />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/cat_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPinkBackGround">
+
+    </android.support.v4.view.ViewPager>
+</LinearLayout>

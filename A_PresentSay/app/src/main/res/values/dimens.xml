@@ -1,0 +1,30 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="main_height_zero">0dp</dimen>
+    <dimen name="main_radio_text">10sp</dimen>
+    <dimen name="choose_divider">10dp</dimen>
+    <dimen name="gift_top">50dp</dimen>
+    <dimen name="gifttop_size">17sp</dimen>
+    <dimen name="gift_margin_ten">10dp</dimen>
+    <dimen name="girl_divider">10dp</dimen>
+    <dimen name="home_margin_fiften">15dp</dimen>
+    <dimen name="home_seek_width">220dp</dimen>
+    <dimen name="home_seek_height">30dp</dimen>
+    <dimen name="home_ninety">90dp</dimen>
+    <dimen name="home_margin_ten">10dp</dimen>
+    <dimen name="margin_fifteen">15dp</dimen>
+    <dimen name="margin_fourty">40dp</dimen>
+    <dimen name="margin_three">3dp</dimen>
+    <dimen name="textsize_thirteen">13sp</dimen>
+    <dimen name="margin_five">5dp</dimen>
+    <dimen name="textsize_eleven">11sp</dimen>
+    <dimen name="height_oneeightzero">180dp</dimen>
+    <dimen name="margin_fifty">15dp</dimen>
+    <dimen name="textsize_twenty">20sp</dimen>
+    <dimen name="textview_thirteen">13sp</dimen>
+    <dimen name="heignt_oneeightzero">180dp</dimen>
+    <dimen name="gv_horspacing">10dp</dimen>
+    <!--<item name="main_line" type="dimen" format="float">0.5dp</item>-->
+</resources>

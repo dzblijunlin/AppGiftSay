@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">A_PresentSay</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="miain_home">首页</string>
+    <string name="main_gift">榜单</string>
+    <string name="main_category">分类</string>
+    <string name="main_profile">我的</string>
+    <string name="gifttop">礼物榜</string>
+    <string name="home_seek"> 搜索</string>
+    <string name="column">栏目</string>
+</resources>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.naruto.a_presentsay.activity.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/main_replace"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_height_zero"
+        android:layout_weight="9">
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorLine"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_height_zero"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/main_home_btn"
+            android:layout_width="@dimen/main_height_zero"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:drawableTop="@drawable/selector_home_bg"
+            android:gravity="center"
+            android:text="@string/miain_home"
+            android:textSize="@dimen/main_radio_text"
+            android:textColor="@color/color"
+            android:background="@color/colorBackGround"/>
+
+        <RadioButton
+            android:id="@+id/main_gift_btn"
+            android:layout_width="@dimen/main_height_zero"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_gift_bg"
+            android:gravity="center"
+            android:text="@string/main_gift"
+            android:textSize="@dimen/main_radio_text"
+            android:textColor="@color/color"
+            android:background="@color/colorBackGround"/>
+
+        <RadioButton
+            android:id="@+id/main_category_btn"
+            android:layout_width="@dimen/main_height_zero"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_category_bg"
+            android:gravity="center"
+            android:text="@string/main_category"
+            android:textSize="@dimen/main_radio_text"
+            android:textColor="@color/color"
+            android:background="@color/colorBackGround"/>
+
+        <RadioButton
+            android:id="@+id/main_profile_btn"
+            android:layout_width="@dimen/main_height_zero"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_profile_bg"
+            android:gravity="center"
+            android:text="@string/main_profile"
+            android:textSize="@dimen/main_radio_text"
+            android:textColor="@color/color"
+            android:background="@color/colorBackGround"/>
+
+
+    </RadioGroup>
+
+</LinearLayout>
