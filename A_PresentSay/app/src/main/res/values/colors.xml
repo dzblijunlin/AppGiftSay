@@ -11,6 +11,14 @@
     <color name="colorChooseIntrod">#8C7878</color>
     <color name="colorChooseTitle">#321E1E</color>
     <color name="colorColumn">#998686</color>
+    <color name="colorStrategy">#503C3C</color>
+    <color name="colorStrategyAuthor">#A79898</color>
+    <color name="colorrightview">#EBEBEB</color>
+    <color name="colorRightTitle">#6D6D72</color>
+    <color name="colorLeft">#333333</color>
+    <color name="colordaytitle">#352121</color>
+    <color name="colorDayContent">#B0A3A3</color>
+    <color name="colorDayMoney">#FF2D47</color>
 
 
 </resources>

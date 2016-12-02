@@ -24,7 +24,8 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/main_height_zero"
         android:layout_weight="1"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
 
         <RadioButton
             android:id="@+id/main_home_btn"
@@ -38,7 +39,8 @@
             android:text="@string/miain_home"
             android:textSize="@dimen/main_radio_text"
             android:textColor="@color/color"
-            android:background="@color/colorBackGround"/>
+            android:background="@color/colorBackGround"
+            />
 
         <RadioButton
             android:id="@+id/main_gift_btn"

@@ -20,6 +20,8 @@ import com.naruto.a_presentsay.R;
 import com.naruto.a_presentsay.adapter.HomeTabAdapter;
 import com.naruto.a_presentsay.bean.HomeTabBean;
 import com.naruto.a_presentsay.tool.UrlTools;
+import com.naruto.a_presentsay.volley.NetHelper;
+import com.naruto.a_presentsay.volley.NetListener;
 
 import java.util.ArrayList;
 
@@ -56,19 +58,13 @@ public class HomeFragment extends BaseFragment {
 
         getContent();
 
-
-
     }
 
     private void getContent() {
         String url = UrlTools.TITLE;
-        RequestQueue requestQueue = Volley.newRequestQueue(mContext);
-        StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
+        NetHelper.MyRequest(url, HomeTabBean.class, new NetListener<HomeTabBean>() {
             @Override
-            public void onResponse(String response) {
-                Gson gson = new Gson();
-                bean = gson.fromJson(response,HomeTabBean.class);
-                Log.d("xxx", bean.getData().getCandidates().get(0).getName());
+            public void successListener(HomeTabBean response) {
                 // fragment复用设置
                 data.add(new ChooseFragment());
                 data.add( GirlFriendFragment.newInstance(UrlTools.HOME_HEAD+"10"+UrlTools.HOME_TAIL));
@@ -90,34 +86,32 @@ public class HomeFragment extends BaseFragment {
                 vp.setAdapter(adapter);
                 // 设置tablayout
                 tab.setupWithViewPager(vp);
-                tab.getTabAt(0).setText(bean.getData().getChannels().get(0).getName());
-                tab.getTabAt(1).setText(bean.getData().getChannels().get(1).getName());
-                tab.getTabAt(2).setText(bean.getData().getChannels().get(2).getName());
-                tab.getTabAt(3).setText(bean.getData().getChannels().get(3).getName());
-                tab.getTabAt(4).setText(bean.getData().getChannels().get(4).getName());
-                tab.getTabAt(5).setText(bean.getData().getChannels().get(5).getName());
-                tab.getTabAt(6).setText(bean.getData().getChannels().get(6).getName());
-                tab.getTabAt(7).setText(bean.getData().getChannels().get(7).getName());
-                tab.getTabAt(8).setText(bean.getData().getChannels().get(8).getName());
-                tab.getTabAt(9).setText(bean.getData().getChannels().get(9).getName());
-                tab.getTabAt(10).setText(bean.getData().getChannels().get(10).getName());
-                tab.getTabAt(11).setText(bean.getData().getChannels().get(11).getName());
-                tab.getTabAt(12).setText(bean.getData().getChannels().get(12).getName());
-                tab.getTabAt(13).setText(bean.getData().getChannels().get(13).getName());
+                tab.getTabAt(0).setText(response.getData().getChannels().get(0).getName());
+                tab.getTabAt(1).setText(response.getData().getChannels().get(1).getName());
+                tab.getTabAt(2).setText(response.getData().getChannels().get(2).getName());
+                tab.getTabAt(3).setText(response.getData().getChannels().get(3).getName());
+                tab.getTabAt(4).setText(response.getData().getChannels().get(4).getName());
+                tab.getTabAt(5).setText(response.getData().getChannels().get(5).getName());
+                tab.getTabAt(6).setText(response.getData().getChannels().get(6).getName());
+                tab.getTabAt(7).setText(response.getData().getChannels().get(7).getName());
+                tab.getTabAt(8).setText(response.getData().getChannels().get(8).getName());
+                tab.getTabAt(9).setText(response.getData().getChannels().get(9).getName());
+                tab.getTabAt(10).setText(response.getData().getChannels().get(10).getName());
+                tab.getTabAt(11).setText(response.getData().getChannels().get(11).getName());
+                tab.getTabAt(12).setText(response.getData().getChannels().get(12).getName());
+                tab.getTabAt(13).setText(response.getData().getChannels().get(13).getName());
 
 
                 // 自定义tab字体颜色
                 tab.setTabTextColors(Color.argb(255,50,30,30),Color.argb(255,255,45,71));
-
-
             }
-        }, new Response.ErrorListener() {
+
             @Override
-            public void onErrorResponse(VolleyError error) {
+            public void errorListener(VolleyError error) {
 
             }
         });
-        requestQueue.add(stringRequest);
+
     }
 
 

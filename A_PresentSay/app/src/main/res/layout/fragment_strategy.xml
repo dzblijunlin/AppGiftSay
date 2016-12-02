@@ -3,25 +3,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.naruto.a_presentsay.fragment.StrategyFragment"
-    android:scrollbars="none">
+    android:scrollbars="none"
+    >
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:descendantFocusability="blocksDescendants">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/strategy_zero"
             android:layout_weight="1"
-            android:background="#FFF"
+            android:background="@color/colorBackGround"
             >
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="15dp">
+                android:layout_marginLeft="@dimen/strategy_ten"
+                android:layout_marginRight="@dimen/strategy_ten"
+                android:layout_marginTop="@dimen/strategy_fifteen">
 
                 <ImageView
                     android:id="@+id/strategy_one_back_iv"
@@ -30,16 +32,16 @@
                     android:src="@mipmap/arrow_right"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dp"/>
+                    android:layout_marginLeft="@dimen/strategy_five"/>
                 <TextView
                     android:id="@+id/strategy_one_all_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="查看全部"
-                    android:textColor="#503C3C"
+                    android:text="@string/strategy_all"
+                    android:textColor="@color/colorStrategy"
                     android:layout_toLeftOf="@id/strategy_one_back_iv"
                     android:layout_centerVertical="true"
-                    android:textSize="11sp"/>
+                    android:textSize="@dimen/strategysize_eleven"/>
                 <TextView
                     android:id="@+id/strategy_one_column_tv"
                     android:layout_width="wrap_content"
@@ -110,16 +112,18 @@
         android:layout_width="match_parent"
         android:layout_height="275dp"
         android:orientation="vertical"
-        android:background="#FFF">
+        android:background="#FFF"
+        >
         <GridView
             android:id="@+id/strategy_two_type_gv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:horizontalSpacing="5dp"
+            android:verticalSpacing="8dp"
             android:numColumns="2"
-            android:scrollbars="none"/>
-
-
+            android:scrollbars="none"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"/>
 
     </LinearLayout>
 
@@ -141,7 +145,8 @@
                     android:layout_marginLeft="10dp"
                     android:text="风格"
                     android:textSize="12sp"
-                    android:textColor="#998787"/>
+                    android:textColor="#998787"
+                    android:layout_marginTop="15dp"/>
 
 
 
@@ -158,13 +163,16 @@
             android:background="#FFF">
 
             <GridView
+                android:layout_marginTop="5dp"
                 android:id="@+id/startegy_three_style_gv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="5dp"
                 android:numColumns="2"
                 android:scrollbars="none"
-                />
+                android:horizontalSpacing="5dp"
+                android:verticalSpacing="8dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"/>
 
         </LinearLayout>
         <LinearLayout
@@ -184,7 +192,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-
                     android:text="对象"
                     android:textSize="12sp"
                     android:textColor="#998787"/>
@@ -222,10 +229,12 @@
                 android:id="@+id/startegy_four_object_gv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="5dp"
                 android:numColumns="2"
                 android:scrollbars="none"
-                />
+                android:horizontalSpacing="5dp"
+                android:verticalSpacing="8dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"/>
 
         </LinearLayout>
 

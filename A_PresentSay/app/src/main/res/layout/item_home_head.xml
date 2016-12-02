@@ -13,11 +13,10 @@
     <GridView
         android:id="@+id/home_head_gv"
         android:layout_width="match_parent"
-        android:layout_height="190dp"
-        android:horizontalSpacing="1dp"
-        android:verticalSpacing="1dp"
+        android:layout_height="@dimen/home_oneninezero"
+        android:horizontalSpacing="@dimen/home_one"
+        android:verticalSpacing="@dimen/home_one"
         android:numColumns="3"
         android:scrollbars="none"
-
         />
 </LinearLayout>

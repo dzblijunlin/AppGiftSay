@@ -21,6 +21,8 @@ import com.naruto.a_presentsay.bean.HomeGrideBean;
 import com.naruto.a_presentsay.bean.HomePictureBean;
 import com.naruto.a_presentsay.tool.GlideImageLoader;
 import com.naruto.a_presentsay.tool.UrlTools;
+import com.naruto.a_presentsay.volley.NetHelper;
+import com.naruto.a_presentsay.volley.NetListener;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
@@ -74,7 +76,6 @@ public class ChooseFragment extends BaseFragment {
                 HomeGrideBean grideBean = gson.fromJson(response,HomeGrideBean.class);
                 List<HomeGrideBean.DataBean.SecondaryBannersBean> grideData = grideBean.getData().getSecondary_banners();
                 grideAdapter.setData(grideData);
-                gv.setVerticalSpacing(0);
                 gv.setAdapter(grideAdapter);
             }
         }, new Response.ErrorListener() {
@@ -89,14 +90,11 @@ public class ChooseFragment extends BaseFragment {
     private void getHead() {
         lv.addHeaderView(headView);
         String imgUrl = UrlTools.PICTURE;
-        RequestQueue requestQueue = Volley.newRequestQueue(mContext);
-        StringRequest stringRequest = new StringRequest(imgUrl, new Response.Listener<String>() {
+        NetHelper.MyRequest(imgUrl, HomePictureBean.class, new NetListener<HomePictureBean>() {
             @Override
-            public void onResponse(String response) {
-                Gson gson = new Gson();
-                HomePictureBean pictureBean = gson.fromJson(response,HomePictureBean.class);
-                for (int i = 0; i < pictureBean.getData().getBanners().size(); i++) {
-                    pics.add(pictureBean.getData().getBanners().get(i).getImage_url());
+            public void successListener(HomePictureBean response) {
+                for (int i = 0; i < response.getData().getBanners().size(); i++) {
+                    pics.add(response.getData().getBanners().get(i).getImage_url());
                 }
                 banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE);
                 banner.setImageLoader(new GlideImageLoader());
@@ -106,38 +104,32 @@ public class ChooseFragment extends BaseFragment {
                 banner.setDelayTime(2000);
                 banner.setIndicatorGravity(BannerConfig.CENTER);
                 banner.start();
-
             }
-        }, new Response.ErrorListener() {
+
             @Override
-            public void onErrorResponse(VolleyError error) {
+            public void errorListener(VolleyError error) {
 
             }
         });
-        requestQueue.add(stringRequest);
+
     }
 // 获取并解析精选内容
     private void getContent() {
         String url = UrlTools.CHOOSE;
-        RequestQueue requestQueue = Volley.newRequestQueue(mContext);
-        StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
+        NetHelper.MyRequest(url, HomeChooseBean.class, new NetListener<HomeChooseBean>() {
             @Override
-            public void onResponse(String response) {
-                Gson gson = new Gson();
-                HomeChooseBean homeChooseBean = gson.fromJson(response,HomeChooseBean.class);
-                data = homeChooseBean.getData().getItems();
+            public void successListener(HomeChooseBean response) {
+                data = response.getData().getItems();
                 HomeChooseAdapter homeChooseAdapter = new HomeChooseAdapter(mContext);
                 homeChooseAdapter.setData(data);
-               lv.setAdapter(homeChooseAdapter);
-
-
+                lv.setAdapter(homeChooseAdapter);
             }
-        }, new Response.ErrorListener() {
+
             @Override
-            public void onErrorResponse(VolleyError error) {
+            public void errorListener(VolleyError error) {
 
             }
         });
-        requestQueue.add(stringRequest);
+
     }
 }

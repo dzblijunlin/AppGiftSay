@@ -1,13 +1,28 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF"
+    android:orientation="horizontal"
+
     tools:context="com.naruto.a_presentsay.fragment.SingleFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
+    <ListView
+        android:id="@+id/single_left_lv"
+        android:layout_width="@dimen/left_zero"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_weight="1"
+        android:divider="@null"
+        android:scrollbars="none"
+        />
 
-</FrameLayout>
+    <ListView
+        android:id="@+id/single_right_lv"
+        android:layout_width="@dimen/left_zero"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:divider="@color/colorBackGround"
+        android:scrollbars="none"/>
+
+</LinearLayout>

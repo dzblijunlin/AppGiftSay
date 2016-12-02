@@ -49,7 +49,6 @@ public class CategoryFragment extends BaseFragment {
         tab.getTabAt(0).setText("攻略");
         tab.getTabAt(1).setText("单品");
         tab.setTabTextColors(Color.argb(255,50,30,30),Color.argb(255,255,45,71));
-
     }
 
 }

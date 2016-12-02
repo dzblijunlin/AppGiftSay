@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="250dp"
 
-    android:layout_marginTop="12dp"
-    android:layout_marginLeft="6dp"
-    android:layout_marginRight="6dp">
+    android:layout_marginTop="@dimen/day_twelve"
+    android:layout_marginLeft="@dimen/day_six"
+    android:layout_marginRight="@dimen/day_six">
 
 
     <LinearLayout
@@ -17,30 +17,30 @@
         <ImageView
             android:id="@+id/item_every_iv"
             android:layout_width="match_parent"
-            android:layout_height="170dp"
+            android:layout_height="@dimen/day_onesevenzero"
             android:src="@mipmap/ic_launcher"
             android:scaleType="fitXY"/>
         <TextView
             android:id="@+id/item_every_title_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="456"
-            android:layout_marginLeft="10dp"
-            android:textSize="12sp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp"
-            />
+            android:layout_marginLeft="@dimen/day_ten"
+            android:textSize="@dimen/daysize_twleve"
+            android:layout_marginTop="@dimen/day_five"
+            android:layout_marginRight="@dimen/day_ten"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/colordaytitle"/>
         <TextView
             android:id="@+id/item_every_content_tv"
             android:layout_width="wrap_content"
-            android:layout_height="29dp"
-            android:text="123"
-            android:textColor="#B0A3A3"
-            android:layout_marginLeft="10dp"
-            android:textSize="12sp"
+            android:layout_height="@dimen/day_twentynine"
+            android:textColor="@color/colorDayContent"
+            android:layout_marginLeft="@dimen/day_ten"
+            android:textSize="@dimen/daysize_twleve"
             android:maxLines="2"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginTop="@dimen/day_five"
+            android:layout_marginRight="@dimen/day_ten"
             />
 
 
@@ -50,25 +50,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="@dimen/day_ten"
             android:gravity="center"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="@dimen/day_five"
             >
         <TextView
             android:id="@+id/price_logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="¥"
-            android:textColor="#FF2D47"
-            android:textSize="15sp"/>
+            android:textColor="@color/colorDayMoney"
+            android:textSize="@dimen/daysize_fifteen"/>
         <TextView
             android:id="@+id/item_every_price_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#FF2D47"
-            android:text="20.0"
-            android:layout_marginLeft="6dp"
-            android:textSize="13sp"/>
+            android:textColor="@color/colorDayMoney"
+            android:layout_marginLeft="@dimen/day_six"
+            android:textSize="@dimen/daysize_thirteen"/>
         </LinearLayout>
     </LinearLayout>
 </android.support.v7.widget.CardView>

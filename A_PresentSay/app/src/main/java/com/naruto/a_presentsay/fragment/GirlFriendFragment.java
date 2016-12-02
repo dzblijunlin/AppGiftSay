@@ -15,6 +15,8 @@ import com.google.gson.Gson;
 import com.naruto.a_presentsay.R;
 import com.naruto.a_presentsay.adapter.HomeGirlAdapter;
 import com.naruto.a_presentsay.bean.HomeGirlBean;
+import com.naruto.a_presentsay.volley.NetHelper;
+import com.naruto.a_presentsay.volley.NetListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,26 +57,23 @@ public class GirlFriendFragment extends BaseFragment {
     }
 
     private void getContent() {
-//        String url = UrlTools.GIRL;
+
         String url = getArguments().getString("key").toString();
-        RequestQueue requestQueue = Volley.newRequestQueue(mContext);
-        StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
+        NetHelper.MyRequest(url, HomeGirlBean.class, new NetListener<HomeGirlBean>() {
             @Override
-            public void onResponse(String response) {
-                Gson gson = new Gson();
-                HomeGirlBean homeGirlBean = gson.fromJson(response,HomeGirlBean.class);
-                data = homeGirlBean.getData().getItems();
+            public void successListener(HomeGirlBean response) {
+                data = response.getData().getItems();
                 HomeGirlAdapter homeGirlAdapter = new HomeGirlAdapter(mContext);
                 homeGirlAdapter.setData(data);
                 lv.setAdapter(homeGirlAdapter);
             }
-        }, new Response.ErrorListener() {
+
             @Override
-            public void onErrorResponse(VolleyError error) {
+            public void errorListener(VolleyError error) {
 
             }
         });
-        requestQueue.add(stringRequest);
+
     }
 
 }

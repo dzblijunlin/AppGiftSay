@@ -23,4 +23,13 @@ public class UrlTools {
    public static final String TAIL = "?limit=20&offset=0";
    // 榜单tablayout
    public static final String GIFT_TAB = "http://api.liwushuo.com/v2/ranks_v2/ranks";
+   // 分类-攻略-栏目
+   public static final String COLUMN = "http://api.liwushuo.com/v2/columns?limit=20&offset=0";
+   // 分类-攻略-品类&&风格&&对象
+   public static final String STRATEGY_FOOT = "http://api.liwushuo.com/v2/channel_groups/all";
+   // 分类_单品
+   public static final String SINGLE = "http://api.liwushuo.com/v2/item_categories/tree";
+   // 轮播图详情页
+   public static final String PICTURE_DETAIL = "http://api.liwushuo.com/v2/collections/397/posts?limit=20&offset=0";
+
 }

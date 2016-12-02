@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--单品右侧行布局页面-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/rightj_thirty"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/right_zero"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/right_ten"
+            android:layout_marginRight="@dimen/right_ten">
+
+            <View
+                android:id="@+id/single_right_view"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_centerInParent="true"
+                android:background="@color/colorrightview" />
+
+
+            <TextView
+                android:id="@+id/single_right_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@color/colorBackGround"
+                android:text="     个性配饰     "
+                android:textSize="@dimen/right_thirteen"
+                android:textColor="@color/colorRightTitle"
+                android:layout_marginLeft="@dimen/right_ten"
+                android:layout_marginRight="@dimen/right_ten"/>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/right_zero"
+        android:layout_weight="6"
+        >
+
+        <com.naruto.a_presentsay.view.MyGridView
+            android:id="@+id/single_right_gv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="3"/>
+
+
+
+
+        </LinearLayout>
+</LinearLayout>

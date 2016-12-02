@@ -22,6 +22,8 @@ import com.naruto.a_presentsay.adapter.GiftTabAdapter;
 import com.naruto.a_presentsay.bean.GiftDayBean;
 import com.naruto.a_presentsay.bean.GiftTabBean;
 import com.naruto.a_presentsay.tool.UrlTools;
+import com.naruto.a_presentsay.volley.NetHelper;
+import com.naruto.a_presentsay.volley.NetListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -67,13 +69,9 @@ public class GiftFragment extends BaseFragment {
 
     private void getContent() {
         String url = UrlTools.GIFT_TAB;
-        RequestQueue requestQueue = Volley.newRequestQueue(mContext);
-        StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
+        NetHelper.MyRequest(url, GiftTabBean.class, new NetListener<GiftTabBean>() {
             @Override
-            public void onResponse(String response) {
-                Gson gson = new Gson();
-                bean = gson.fromJson(response,GiftTabBean.class);
-
+            public void successListener(GiftTabBean response) {
                 data.add(EveryDayFragment.newInstance(UrlTools.HEAD + "1" +UrlTools.TAIL));
                 data.add(EveryDayFragment.newInstance(UrlTools.HEAD + "2" +UrlTools.TAIL));
                 data.add(EveryDayFragment.newInstance(UrlTools.HEAD + "3" +UrlTools.TAIL));
@@ -81,20 +79,19 @@ public class GiftFragment extends BaseFragment {
                 GiftTabAdapter adapter = new GiftTabAdapter(getChildFragmentManager(),data);
                 vp.setAdapter(adapter);
                 tab.setupWithViewPager(vp);
-                tab.getTabAt(0).setText(bean.getData().getRanks().get(0).getName());
-                tab.getTabAt(1).setText(bean.getData().getRanks().get(1).getName());
-                tab.getTabAt(2).setText(bean.getData().getRanks().get(2).getName());
-                tab.getTabAt(3).setText(bean.getData().getRanks().get(3).getName());
+                tab.getTabAt(0).setText(response.getData().getRanks().get(0).getName());
+                tab.getTabAt(1).setText(response.getData().getRanks().get(1).getName());
+                tab.getTabAt(2).setText(response.getData().getRanks().get(2).getName());
+                tab.getTabAt(3).setText(response.getData().getRanks().get(3).getName());
                 tab.setTabTextColors(Color.argb(255,50,30,30),Color.argb(255,255,45,71));
-
             }
-        }, new Response.ErrorListener() {
+
             @Override
-            public void onErrorResponse(VolleyError error) {
+            public void errorListener(VolleyError error) {
 
             }
         });
-        requestQueue.add(stringRequest);
+
 
 
     }
