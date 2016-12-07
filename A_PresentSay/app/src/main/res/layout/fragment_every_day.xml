@@ -5,18 +5,18 @@
 
 
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/day_rv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-
-    </android.support.v7.widget.RecyclerView>
-    <!--<com.github.jdsjlzx.recyclerview.LRecyclerView-->
+    <!--<android.support.v7.widget.RecyclerView-->
         <!--android:id="@+id/day_rv"-->
         <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
+        <!--android:layout_height="match_parent"-->
+        <!--&gt;-->
 
-    <!--</com.github.jdsjlzx.recyclerview.LRecyclerView>-->
+    <!--</android.support.v7.widget.RecyclerView>-->
+    <com.github.jdsjlzx.recyclerview.LRecyclerView
+        android:id="@+id/day_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.github.jdsjlzx.recyclerview.LRecyclerView>
 
 </LinearLayout>

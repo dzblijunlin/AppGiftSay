@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_home_choose_info"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPinkBackGround"
+    android:orientation="vertical"
+    tools:context="com.naruto.a_presentsay.activity.HomeChooseInfoActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="@color/colorBackGround">
+
+        <TextView
+            android:id="@+id/home_lv_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:text="查看全集"
+            android:textColor="#321E1E"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/home_lv_detail_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="攻略详情"
+            android:textColor="#321E1E"
+            android:textSize="19sp" />
+
+        <ImageView
+            android:id="@+id/home_lv_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:src="@mipmap/btn_back_grey" />
+
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/home_lv_wv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorBackGround">
+
+        <TextView
+            android:id="@+id/home_lv_msg_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:text="10"
+            android:layout_centerVertical="true"
+            />
+
+        <ImageView
+            android:id="@+id/home_lv_msg_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/home_lv_msg_tv"
+            android:src="@mipmap/ic_action_item_comment"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:id="@+id/home_lv_share_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="10"
+            android:layout_centerVertical="true"/>
+        <ImageView
+            android:id="@+id/home_lv_share_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_action_item_share"
+            android:layout_toLeftOf="@id/home_lv_share_tv"
+            android:layout_centerVertical="true"
+            />
+
+
+        <ImageView
+            android:id="@+id/home_lv_heart_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_action_item_favourite_normal"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"/>
+        <TextView
+            android:id="@+id/home_lv_heart_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/home_lv_heart_iv"
+            android:text="12"
+            android:layout_centerVertical="true"/>
+
+
+    </RelativeLayout>
+</LinearLayout>

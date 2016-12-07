@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.naruto.a_presentsay.activity.MainActivity">
+    tools:context="com.naruto.a_presentsay.activity.MainActivity"
+    android:background="#FFF">
 
     <FrameLayout
         android:id="@+id/main_replace"
@@ -40,7 +41,7 @@
             android:textSize="@dimen/main_radio_text"
             android:textColor="@color/color"
             android:background="@color/colorBackGround"
-            />
+            android:layout_marginTop="5dp"/>
 
         <RadioButton
             android:id="@+id/main_gift_btn"
@@ -53,7 +54,8 @@
             android:text="@string/main_gift"
             android:textSize="@dimen/main_radio_text"
             android:textColor="@color/color"
-            android:background="@color/colorBackGround"/>
+            android:background="@color/colorBackGround"
+            android:layout_marginTop="5dp"/>
 
         <RadioButton
             android:id="@+id/main_category_btn"
@@ -66,7 +68,8 @@
             android:text="@string/main_category"
             android:textSize="@dimen/main_radio_text"
             android:textColor="@color/color"
-            android:background="@color/colorBackGround"/>
+            android:background="@color/colorBackGround"
+            android:layout_marginTop="5dp"/>
 
         <RadioButton
             android:id="@+id/main_profile_btn"
@@ -79,7 +82,8 @@
             android:text="@string/main_profile"
             android:textSize="@dimen/main_radio_text"
             android:textColor="@color/color"
-            android:background="@color/colorBackGround"/>
+            android:background="@color/colorBackGround"
+            android:layout_marginTop="5dp"/>
 
 
     </RadioGroup>

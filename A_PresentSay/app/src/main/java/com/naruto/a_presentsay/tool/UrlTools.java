@@ -30,6 +30,13 @@ public class UrlTools {
    // 分类_单品
    public static final String SINGLE = "http://api.liwushuo.com/v2/item_categories/tree";
    // 轮播图详情页
-   public static final String PICTURE_DETAIL = "http://api.liwushuo.com/v2/collections/397/posts?limit=20&offset=0";
+   public static final String BANNER_HEAD = "http://api.liwushuo.com/v2/collections/";
+   public static final String BANNER_TAIL = "/posts?limit=20&offset=0";
+   // 首页Grid详情页
+   public static final String HOME_GRID_HEAD = "http://api.liwushuo.com/v2/collections/";
+   public static final String HOME_GRID_TAIL = "/posts?limit=20&offset=0";
+   // 首页Listview详情页
+   public static final String HOME_LISTVIEW_HEAD = "http://www.liwushuo.com/posts/";
+   public static final String HOME_LISTVIEW_TAIL = "/content";
 
 }
