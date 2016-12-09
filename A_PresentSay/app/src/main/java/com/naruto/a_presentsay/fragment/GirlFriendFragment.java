@@ -1,9 +1,11 @@
 package com.naruto.a_presentsay.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.android.volley.RequestQueue;
@@ -13,7 +15,9 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.naruto.a_presentsay.R;
+import com.naruto.a_presentsay.activity.HomeChooseInfoActivity;
 import com.naruto.a_presentsay.adapter.HomeGirlAdapter;
+import com.naruto.a_presentsay.bean.HomeChooseBean;
 import com.naruto.a_presentsay.bean.HomeGirlBean;
 import com.naruto.a_presentsay.volley.NetHelper;
 import com.naruto.a_presentsay.volley.NetListener;
@@ -28,6 +32,7 @@ import java.util.List;
 public class GirlFriendFragment extends BaseFragment {
     private ListView lv;
     private List<HomeGirlBean.DataBean.ItemsBean> data;
+    private HomeChooseBean homeChooseBean;
 
 
     @Override
@@ -61,11 +66,20 @@ public class GirlFriendFragment extends BaseFragment {
         String url = getArguments().getString("key").toString();
         NetHelper.MyRequest(url, HomeGirlBean.class, new NetListener<HomeGirlBean>() {
             @Override
-            public void successListener(HomeGirlBean response) {
+            public void successListener(final HomeGirlBean response) {
                 data = response.getData().getItems();
                 HomeGirlAdapter homeGirlAdapter = new HomeGirlAdapter(mContext);
                 homeGirlAdapter.setData(data);
                 lv.setAdapter(homeGirlAdapter);
+                lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Intent intent = new Intent(mContext,HomeChooseInfoActivity.class);
+                        String lvId = response.getData().getItems().get(i).getId() + "";
+                        intent.putExtra("lvKey",lvId);
+                        startActivity(intent);
+                    }
+                });
             }
 
             @Override

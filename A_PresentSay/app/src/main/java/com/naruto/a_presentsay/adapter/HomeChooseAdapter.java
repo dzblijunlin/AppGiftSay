@@ -70,7 +70,7 @@ public class HomeChooseAdapter extends BaseAdapter {
         holder.titleTv.setText(data.get(i).getTitle());
         holder.inTv.setText(data.get(i).getIntroduction());
         if (data.get(i).getContent_type() != 1 ) {
-            holder.uninTv.setText(data.get(i).getColumn().getTitle());
+            //holder.uninTv.setText(data.get(i).getColumn().getTitle());
         }
         holder.numTv.setText(data.get(i).getLikes_count() + "");
 

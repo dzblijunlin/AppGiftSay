@@ -8,6 +8,8 @@ import android.widget.ImageView;
 
 import com.naruto.a_presentsay.R;
 
+import cn.sharesdk.framework.ShareSDK;
+
 public class WelcomeActivity extends BaseActivity implements View.OnClickListener {
     private ImageView iv;
     private CountDownTimer countDownTimer;
@@ -20,6 +22,8 @@ public class WelcomeActivity extends BaseActivity implements View.OnClickListene
     void initView() {
         iv = bindView(R.id.welcome_iv);
         iv.setOnClickListener(this);
+        // 第三方分享
+        ShareSDK.initSDK(this);
     }
 
     @Override

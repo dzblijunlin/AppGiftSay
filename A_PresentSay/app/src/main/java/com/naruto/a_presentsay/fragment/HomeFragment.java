@@ -155,10 +155,12 @@ public class HomeFragment extends BaseFragment {
                     @Override
                     public void onDismiss() {
                         popDownIv.setImageResource(R.mipmap.arrow_index_down);
+//                        vp.setCurrentItem(); 跳转
                     }
                 });
                 popDownIv.setImageResource(R.mipmap.arrow_index_up);
                 popAdapter = new HomePopAdapter(mContext);
+
 
                 NetHelper.MyRequest(UrlTools.TITLE, HomeTabBean.class, new NetListener<HomeTabBean>() {
 

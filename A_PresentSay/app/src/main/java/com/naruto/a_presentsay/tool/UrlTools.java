@@ -38,5 +38,12 @@ public class UrlTools {
    // 首页Listview详情页
    public static final String HOME_LISTVIEW_HEAD = "http://www.liwushuo.com/posts/";
    public static final String HOME_LISTVIEW_TAIL = "/content";
-
+   // 榜单页上部详情页
+   public static final String GIFT_ONE_HEAD = "http://api.liwushuo.com/v2/items/";
+   // 榜单页下部RecyclerView详情页
+   public static final String GIFT_RV_HEAD = "http://api.liwushuo.com/v2/items/";
+   public static final String GIFT_RV_TAIL = "/recommend?num=20&post_num=5";
+   // 榜单详情页页评论
+   public static final String GIFT_REVIEW_HEAD = "http://api.liwushuo.com/v2/items/";
+   public static final String GIFT_REVIEW_TAIL = "/comments?limit=20&offset=0";
 }

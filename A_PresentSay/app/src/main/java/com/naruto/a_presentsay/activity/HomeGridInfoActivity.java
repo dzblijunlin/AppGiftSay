@@ -41,15 +41,14 @@ public class HomeGridInfoActivity extends BaseActivity {
 
 
         // 拼接网址
-       // String url = UrlTools.HOME_GRID_HEAD + gridId + UrlTools.HOME_GRID_TAIL;
-        String url = "http://api.liwushuo.com/v2/collections/" + gridId + "/posts?limit=20&offset=0";
-
+        String url = UrlTools.HOME_GRID_HEAD + gridId + UrlTools.HOME_GRID_TAIL;
         NetHelper.MyRequest(url, HomeGridInfoBean.class, new NetListener<HomeGridInfoBean>() {
             @Override
             public void successListener(HomeGridInfoBean response) {
                 HomeGridInfoAdapter adapter = new HomeGridInfoAdapter(HomeGridInfoActivity.this);
                 adapter.setData(response);
                 lv.setAdapter(adapter);
+
             }
 
             @Override
