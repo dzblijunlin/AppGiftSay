@@ -1,21 +1,26 @@
 package com.naruto.a_presentsay.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ListView;
 
 import com.android.volley.VolleyError;
 import com.naruto.a_presentsay.R;
+import com.naruto.a_presentsay.activity.CateSingleInfoActivity;
 import com.naruto.a_presentsay.adapter.CateSingleLeftAdapter;
 import com.naruto.a_presentsay.adapter.CateSingleRightAdapter;
 import com.naruto.a_presentsay.bean.CateSingleBean;
 import com.naruto.a_presentsay.tool.UrlTools;
+import com.naruto.a_presentsay.view.MyGridView;
 import com.naruto.a_presentsay.volley.NetHelper;
 import com.naruto.a_presentsay.volley.NetListener;
 
@@ -34,7 +39,7 @@ public class SingleFragment extends BaseFragment {
     private List<CateSingleBean.DataBean.CategoriesBean> leftDatas;// 左边的listview
     private List<CateSingleBean.DataBean.CategoriesBean> rightDatas;// 右边的listview
     private List<CateSingleBean.DataBean.CategoriesBean.SubcategoriesBean> gridDatas;
-
+    private MyGridView gv;
     @Override
     protected int setlayout() {
         return R.layout.fragment_single;
@@ -51,6 +56,21 @@ public class SingleFragment extends BaseFragment {
     void initData() {
         getContent();
         onItemClick();
+
+    }
+
+    private void getGvData() {
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_single_right,null);
+        gv = (MyGridView) view.findViewById(R.id.single_right_gv);
+        Log.d("SingleFragment", "abcd");
+        gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(mContext, CateSingleInfoActivity.class);
+
+                startActivity(intent);
+            }
+        });
     }
 
     private void onItemClick() {
@@ -116,6 +136,8 @@ public class SingleFragment extends BaseFragment {
                 rightAdapter.setDatas(rightDatas);
                 rightAdapter.setList(gridDatas);
                 rightLv.setAdapter(rightAdapter);
+
+
             }
 
             @Override

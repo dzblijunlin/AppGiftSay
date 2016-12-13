@@ -2,6 +2,7 @@ package com.naruto.a_presentsay.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.naruto.a_presentsay.R;
 import com.naruto.a_presentsay.bean.CateColumnBean;
+import com.naruto.a_presentsay.tool.MyColumnClick;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -21,6 +23,13 @@ import java.util.List;
 public class CateColumnAdapter extends RecyclerView.Adapter<CateColumnAdapter.MyColumnViewHolder> {
     private List<CateColumnBean.DataBean.ColumnsBean> data;
     private Context context;
+    private MyColumnClick myColumnClick;
+
+    public void setMyColumnClick(MyColumnClick myColumnClick) {
+        this.myColumnClick = myColumnClick;
+
+
+    }
 
     public CateColumnAdapter(Context context) {
         this.context = context;
@@ -39,10 +48,18 @@ public class CateColumnAdapter extends RecyclerView.Adapter<CateColumnAdapter.My
     }
 
     @Override
-    public void onBindViewHolder(MyColumnViewHolder holder, int position) {
+    public void onBindViewHolder(final MyColumnViewHolder holder, final int position) {
+        Log.e("test","onBindViewHolder:"+myColumnClick);
         Picasso.with(context).load(data.get(position).getBanner_image_url()).into(holder.iv);
         holder.titleTv.setText(data.get(position).getTitle());
         holder.authorTv.setText(data.get(position).getAuthor());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.e("test","my:"+myColumnClick);
+                myColumnClick.myColumnListener(position);
+            }
+        });
     }
 
     @Override

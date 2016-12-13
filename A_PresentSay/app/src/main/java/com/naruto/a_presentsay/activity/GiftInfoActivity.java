@@ -47,6 +47,8 @@ public class GiftInfoActivity extends BaseActivity{
     }
 
     private void getTabData() {
+        // 预加载两页
+        vp.setOffscreenPageLimit(2);
         data.add(new GiftOneInfoFragment());
         data.add(new GiftDetailInfoFragment());
         data.add(new GiftReviewInfoFragment());

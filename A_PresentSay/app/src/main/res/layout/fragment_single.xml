@@ -23,6 +23,8 @@
         android:layout_height="match_parent"
         android:layout_weight="3"
         android:divider="@color/colorBackGround"
-        android:scrollbars="none"/>
+        android:scrollbars="none"
+        android:descendantFocusability="blocksDescendants"
+        />
 
 </LinearLayout>

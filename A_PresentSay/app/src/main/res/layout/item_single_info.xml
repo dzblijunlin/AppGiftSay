@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="265dp"
-
-    android:layout_marginTop="@dimen/day_twelve"
-    android:layout_marginLeft="@dimen/day_six"
-    android:layout_marginRight="@dimen/day_six">
-
+    android:layout_marginTop="@dimen/dp_10"
+    android:layout_marginLeft="@dimen/dp_6"
+    android:layout_marginRight="@dimen/dp_6">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <ImageView
-            android:id="@+id/item_every_iv"
+            android:id="@+id/item_single_iv"
             android:layout_width="match_parent"
             android:layout_height="@dimen/day_onesevenzero"
             android:scaleType="fitXY"/>
         <TextView
-            android:id="@+id/item_every_title_tv"
+            android:id="@+id/item_single_title_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/day_ten"
@@ -31,7 +27,7 @@
             android:ellipsize="end"
             android:textColor="@color/colordaytitle"/>
         <TextView
-            android:id="@+id/item_every_content_tv"
+            android:id="@+id/item_single_content_tv"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/day_twentynine"
             android:textColor="@color/colorDayContent"
@@ -53,20 +49,21 @@
             android:gravity="center"
             android:layout_marginTop="@dimen/day_five"
             >
-        <TextView
-            android:id="@+id/price_logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="¥"
-            android:textColor="@color/colorDayMoney"
-            android:textSize="@dimen/daysize_fifteen"/>
-        <TextView
-            android:id="@+id/item_every_price_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorDayMoney"
-            android:layout_marginLeft="@dimen/day_six"
-            android:textSize="@dimen/daysize_thirteen"/>
+            <TextView
+                android:id="@+id/price_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¥"
+                android:textColor="@color/colorDayMoney"
+                android:textSize="@dimen/daysize_fifteen"/>
+            <TextView
+                android:id="@+id/item_single_price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorDayMoney"
+                android:layout_marginLeft="@dimen/day_six"
+                android:textSize="@dimen/daysize_thirteen"/>
         </LinearLayout>
     </LinearLayout>
+
 </android.support.v7.widget.CardView>

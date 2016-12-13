@@ -22,7 +22,7 @@ public class HomePopAdapter extends RecyclerView.Adapter<HomePopAdapter.MyPopVie
     private List<HomeTabBean.DataBean.ChannelsBean> datas;
     private Context context;
     private int selectIndex;
-//    private MyPopClick mClick;
+    private MyPopClick mClick;
 
     public HomePopAdapter(Context context) {
         this.context = context;
@@ -38,9 +38,9 @@ public class HomePopAdapter extends RecyclerView.Adapter<HomePopAdapter.MyPopVie
         notifyDataSetChanged();
     }
 
-//    public void setmClick(MyPopClick mClick) {
-//        this.mClick = mClick;
-//    }
+    public void setmClick(MyPopClick mClick) {
+        this.mClick = mClick;
+    }
 
     @Override
     public MyPopViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -52,21 +52,21 @@ public class HomePopAdapter extends RecyclerView.Adapter<HomePopAdapter.MyPopVie
     @Override
     public void onBindViewHolder(final MyPopViewHolder holder, final int position) {
         holder.tv.setText(datas.get(position).getName());
-        if (position == selectIndex){
-            holder.tv.setTextColor(Color.RED);
-            holder.views.setBackgroundColor(Color.RED);
-        }else {
-            holder.tv.setTextColor(Color.BLACK);
-            holder.views.setBackgroundColor(Color.parseColor("#dfdfdfdf"));
-        }
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                int pos = holder.getAdapterPosition();
-//                HomeTabBean.DataBean.ChannelsBean bean = datas.get(position);
-//                mClick.myPopListener(pos,bean);
-//            }
-//        });
+//        if (position == selectIndex){
+//            holder.tv.setTextColor(Color.RED);
+//            holder.views.setBackgroundColor(Color.RED);
+//        }else {
+//            holder.tv.setTextColor(Color.BLACK);
+//            holder.views.setBackgroundColor(Color.parseColor("#dfdfdfdf"));
+//        }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int pos = holder.getAdapterPosition();
+                HomeTabBean.DataBean.ChannelsBean bean = datas.get(position);
+                mClick.myPopListener(pos,bean);
+            }
+        });
 
     }
 

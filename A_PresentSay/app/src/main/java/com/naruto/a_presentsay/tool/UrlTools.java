@@ -46,4 +46,16 @@ public class UrlTools {
    // 榜单详情页页评论
    public static final String GIFT_REVIEW_HEAD = "http://api.liwushuo.com/v2/items/";
    public static final String GIFT_REVIEW_TAIL = "/comments?limit=20&offset=0";
+   // 分类页栏目
+   public static final String CATE_COLUMN_HEAD = "http://api.liwushuo.com/v2/columns/";
+   public static final String CATE_COLUMN_TAIL = "?limit=20&offset=0";
+   // 分类页下半部Gv
+   public static final String CATE_BOTTOM_HEAD = "http://api.liwushuo.com/v2/channels/";
+   public static final String CATE_BOTTOM_TAIL = "/items_v2?order_by=now&limit=20&offset=0";
+   // 分类页单品详情页
+   public static final String CATE_SINGLE_HEAD = "http://api.liwushuo.com/v2/item_subcategories/";
+   public static final String CATE_SINGLE_TAIL = "/items?limit=20&offset=0";
+   // 攻略详情
+   public  static  final String CATE_STRATEGY_INFO ="http://api.liwushuo.com/v2/columns?limit=20&offset=0";
+
 }

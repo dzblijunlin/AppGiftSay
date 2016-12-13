@@ -60,4 +60,5 @@ public class WelcomeActivity extends BaseActivity implements View.OnClickListene
         countDownTimer.cancel();
         finish();
     }
+
 }

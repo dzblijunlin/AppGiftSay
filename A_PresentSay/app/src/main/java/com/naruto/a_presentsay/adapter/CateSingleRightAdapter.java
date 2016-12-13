@@ -1,15 +1,18 @@
 package com.naruto.a_presentsay.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.TextView;
 
 import com.naruto.a_presentsay.R;
+import com.naruto.a_presentsay.activity.CateSingleInfoActivity;
 import com.naruto.a_presentsay.bean.CateSingleBean;
 import com.naruto.a_presentsay.view.MyGridView;
 
@@ -61,7 +64,7 @@ public class CateSingleRightAdapter extends BaseAdapter{
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
+    public View getView(final int i, View view, ViewGroup viewGroup) {
         MyRightViewHolder holder = null;
         if (view == null){
             view = LayoutInflater.from(context).inflate(R.layout.item_single_right,viewGroup,false);
@@ -81,9 +84,16 @@ public class CateSingleRightAdapter extends BaseAdapter{
         list = bean.getSubcategories();
         holder.adapter.setDatas(list);
         holder.gv.setAdapter(holder.adapter);
-
-
-
+        // 传送单品求详情页的ID以及跳转
+        holder.gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int pos, long l) {
+                Intent intent = new Intent(context,CateSingleInfoActivity.class);
+                String singleId = datas.get(i).getSubcategories().get(pos).getId() + "";
+                intent.putExtra("singleId",singleId);
+                context.startActivity(intent);
+            }
+        });
         return view;
     }
     public  void setIndex(int index){

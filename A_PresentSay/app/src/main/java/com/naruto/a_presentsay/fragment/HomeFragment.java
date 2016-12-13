@@ -21,6 +21,7 @@ import com.naruto.a_presentsay.R;
 import com.naruto.a_presentsay.adapter.HomePopAdapter;
 import com.naruto.a_presentsay.adapter.HomeTabAdapter;
 import com.naruto.a_presentsay.bean.HomeTabBean;
+import com.naruto.a_presentsay.tool.MyPopClick;
 import com.naruto.a_presentsay.tool.UrlTools;
 import com.naruto.a_presentsay.volley.NetHelper;
 import com.naruto.a_presentsay.volley.NetListener;
@@ -40,7 +41,6 @@ public class HomeFragment extends BaseFragment {
     private TextView seekTv;
     private ImageView clockIv;
     private ArrayList<Fragment> data;
-    private HomeTabBean bean;
     private ImageView popDownIv;
     private RecyclerView popRv;
     private RelativeLayout titleRl;
@@ -155,7 +155,7 @@ public class HomeFragment extends BaseFragment {
                     @Override
                     public void onDismiss() {
                         popDownIv.setImageResource(R.mipmap.arrow_index_down);
-//                        vp.setCurrentItem(); 跳转
+
                     }
                 });
                 popDownIv.setImageResource(R.mipmap.arrow_index_up);
@@ -171,6 +171,7 @@ public class HomeFragment extends BaseFragment {
                         popRv.setAdapter(popAdapter);
                         GridLayoutManager manager = new GridLayoutManager(mContext, 4);
                         popRv.setLayoutManager(manager);
+
                     }
 
                     @Override
@@ -178,16 +179,16 @@ public class HomeFragment extends BaseFragment {
 
                     }
                 });
+                popAdapter.setmClick(new MyPopClick() {
+                    @Override
+                    public void myPopListener(int position, HomeTabBean.DataBean.ChannelsBean bean) {
+                        vp.setCurrentItem(position);
+                        popAdapter.setSelectIndex(position);
+                        popupWindow.dismiss();
+                    }
+                });
 
 
-//                popAdapter.setmClick(new MyPopClick() {
-//                    @Override
-//                    public void myPopListener(int position, HomeTabBean.DataBean.ChannelsBean bean) {
-//                        vp.setCurrentItem(position);
-//                        popAdapter.setSelectIndex(position);
-//                        popupWindow.dismiss();
-//                    }
-//                });
 
 
             }

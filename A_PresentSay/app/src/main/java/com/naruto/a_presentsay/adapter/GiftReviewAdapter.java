@@ -13,6 +13,8 @@ import com.naruto.a_presentsay.R;
 import com.naruto.a_presentsay.bean.GiftReviewBean;
 import com.squareup.picasso.Picasso;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 /**
  * Created by dllo on 16/12/9.
  */
@@ -61,6 +63,8 @@ public class GiftReviewAdapter extends BaseAdapter{
         return view;
     }
     class MyReviewViewHolder {
+
+
         private ImageView iv;
         private TextView nameTv,contentTv;
         public MyReviewViewHolder(View view){

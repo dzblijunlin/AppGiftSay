@@ -1,6 +1,7 @@
 package com.naruto.a_presentsay.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,7 @@ import java.util.List;
 public class CateFootAdapter extends BaseAdapter{
     private List<CateFootBean.DataBean.ChannelGroupsBean> data;
     private Context context;
+    private static int mId;
 
     public CateFootAdapter(Context context) {
         this.context = context;
@@ -57,9 +59,12 @@ public class CateFootAdapter extends BaseAdapter{
             holder = (MyCateFootViewHolder) view.getTag();
         }
         Picasso.with(context).load(data.get(0).getChannels().get(i).getCover_image_url()).into(holder.iv);
-
+        mId = i;
 
         return view;
+    }
+    public static int getTypeId(){
+        return mId ;
     }
     class MyCateFootViewHolder {
         private ImageView iv;

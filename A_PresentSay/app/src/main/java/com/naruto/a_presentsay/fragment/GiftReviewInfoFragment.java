@@ -44,15 +44,14 @@ public class GiftReviewInfoFragment extends BaseFragment {
 
     private void getReviewData() {
         String id = GiftInfoActivity.id();
-
         String url = UrlTools.GIFT_REVIEW_HEAD + id + UrlTools.GIFT_REVIEW_TAIL;
         NetHelper.MyRequest(url, GiftReviewBean.class, new NetListener<GiftReviewBean>() {
             @Override
             public void successListener(GiftReviewBean response) {
-//                GiftReviewAdapter adapter = new GiftReviewAdapter(mContext);
-//                bean = response;
-//                adapter.setBean(bean);
-//                lv.setAdapter(adapter);
+                GiftReviewAdapter adapter = new GiftReviewAdapter(mContext);
+                bean = response;
+                adapter.setBean(bean);
+                lv.setAdapter(adapter);
             }
 
             @Override
